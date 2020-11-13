@@ -2,11 +2,13 @@ const db = require("../models/");
 
 module.exports = function(app) {
     app.get("/api/workouts",function(req,res){  
-        db.Workout.find({})
+        db.Workout.find()
         .then(data =>{  
+            console.log('data', data)
             res.json(data)
         })
         .catch(err => { 
+            console.log(err)
             res.json(err)
         })
     });
@@ -53,4 +55,6 @@ module.exports = function(app) {
             res.json(err)
         })
     });
+
+
 }
