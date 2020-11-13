@@ -14,7 +14,12 @@ app.use(express.static("public"));
 require("./routes/api-routes")(app);
 require("./routes/html-routes")(app);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", { 
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false
+})
 .then(()=>console.log("connected to mongoDB"))
 .catch(err => console.error("could not connect to mongoDB", err));
 
