@@ -1,4 +1,4 @@
-# Workout Tracker ![maintained](https://img.shields.io/maintenance/false/2020-red) ![license](https://img.shields.io/badge/license-MIT-blue)
+# Workout Tracker ![maintained](https://img.shields.io/maintenance/true/2020-green) ![license](https://img.shields.io/badge/license-MIT-blue)
 
 ### Description
 A app for consumers to track their workout progress to reach their fitness goals.
