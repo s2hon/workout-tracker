@@ -11,9 +11,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-require("./routes/api-routes")(app);
-require("./routes/html-routes")(app);
-
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", { 
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -22,6 +19,9 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", {
 })
 .then(()=>console.log("connected to mongoDB"))
 .catch(err => console.error("could not connect to mongoDB", err));
+
+require("./routes/api-routes")(app);
+require("./routes/html-routes")(app);
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
